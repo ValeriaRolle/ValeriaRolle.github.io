@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dummy Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+var data = [
+  { year: 2012, percentage: 25.8 },
+  { year: 2017, percentage: 29.1 },
+  { year: 2020, percentage: 31.3 },
+  { year: 2022, percentage: 27.6 }
+];
+
+var years = data.map(d => d.year);
+var percentages = data.map(d => d.percentage);
+
+var trace1 = {
+  x: years,
+  y: percentages,
+  type: 'scatter',
+  mode: 'lines+markers',
+  line: {
+    color: 'rgb(255, 200, 132)',
+    width: 2
+  },
+  marker: {
+    color: 'rgb(255, 200, 132)',
+    size: 8
+  }
+};
+
+var layout = {
+  title: 'Percentage over time',
+  xaxis: {
+    title: 'Year'
+  },
+  yaxis: {
+    title: 'Percentage'
+  }
+};
+
+Plotly.newPlot('chart', [trace1], layout);
+	</script>
+</body>
+</html>
